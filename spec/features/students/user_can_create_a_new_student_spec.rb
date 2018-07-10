@@ -12,9 +12,9 @@ describe 'User can create a new student' do
 
         fill_in :student_name, with: 'Dude'
 
-        click_on "submit"
+        click_on "Create Student"
 
-        expect(page).to have_content(student_one.name)
+        expect(page).to have_content('Dude')
       end
     end
   end
