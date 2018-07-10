@@ -7,6 +7,13 @@ describe 'User sees a list of all students' do
       student_two = Student.create(name: "No Bo")
       student_three = Student.create(name: "Fran Z")
 
+      address_one = Address.create(description: 'lkjsda', street_address: 'kjhfd', city: 'nmbvcv', state: 'GA',
+      zip_code: 8, student_id: student_one.id)
+      address_one = Address.create(description: 'lkjsda', street_address: 'kjhfd', city: 'nmbvcv', state: 'GA',
+      zip_code: 8, student_id: student_two.id)
+      address_one = Address.create(description: 'lkjsda', street_address: 'kjhfd', city: 'nmbvcv', state: 'GA',
+      zip_code: 8, student_id: student_three.id)
+
       visit students_path
 
       expect(current_path).to eq(students_path)
