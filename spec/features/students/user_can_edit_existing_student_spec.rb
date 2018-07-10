@@ -9,8 +9,9 @@ describe 'User can edit an existing student' do
 
       fill_in :student_name, with: 'Dude'
 
-      click_on "Create Student"
+      click_on "Update Student"
 
+      expect(current_path).to eq(student_path(2))
       expect(page).to have_content('Dude')
     end
   end

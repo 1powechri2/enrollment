@@ -24,6 +24,15 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
+  def update
+    @student = Student.new(student_params)
+    if @student.save
+      redirect_to student_path(@student)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def student_params
